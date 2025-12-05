@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
-import { resumeData } from '../data/resume';
+import { portfolioData } from '../data/portfolioData';
 import { FaBriefcase, FaCalendarAlt, FaMapMarkerAlt } from 'react-icons/fa';
 
 const About = () => {
-    const { summary } = resumeData.personalInfo;
-    const { experience } = resumeData;
+    const { summary } = portfolioData.personalInfo;
+    const { experience } = portfolioData;
 
     return (
         <section id="about" className="section" style={{ background: 'var(--bg-dark)' }}>

@@ -1,6 +1,6 @@
 import { FaMobileAlt, FaServer, FaDatabase, FaMapMarkedAlt, FaWallet, FaCode } from 'react-icons/fa';
 
-export const resumeData = {
+export const portfolioData = {
   personalInfo: {
     name: "Lokesh Reddy Polu",
     role: "Flutter, Go & PostgreSQL Developer",

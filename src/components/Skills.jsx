@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
-import { resumeData } from '../data/resume';
+import { portfolioData } from '../data/portfolioData';
 
 const Skills = () => {
-    const { skills } = resumeData;
+    const { skills } = portfolioData;
 
     const containerVariants = {
         hidden: { opacity: 0 },

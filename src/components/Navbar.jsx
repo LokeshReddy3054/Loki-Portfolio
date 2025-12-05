@@ -23,47 +23,17 @@ const Navbar = () => {
     ];
 
     return (
-        <nav style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            width: '100%',
-            zIndex: 100,
-            transition: 'all 0.3s ease',
-            background: scrolled ? 'rgba(10, 10, 10, 0.95)' : 'transparent',
-            backdropFilter: scrolled ? 'blur(10px)' : 'none',
-            borderBottom: scrolled ? '1px solid rgba(255, 255, 255, 0.05)' : 'none',
-            padding: scrolled ? '1rem 0' : '1.5rem 0'
-        }}>
-            <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <a href="#" style={{
-                    fontSize: '1.5rem',
-                    fontWeight: 700,
-                    fontFamily: "'Noto Serif JP', serif",
-                    letterSpacing: '2px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.5rem'
-                }}>
+        <nav className={`nav-container ${scrolled ? 'nav-scrolled' : 'nav-transparent'}`}>
+            <div className="container flex-between">
+                <a href="#" className="nav-logo">
                     <span style={{ color: 'var(--primary)' }}>●</span> LOKESH
                 </a>
 
                 {/* Desktop Menu */}
-                <ul style={{ display: 'none', gap: '2.5rem', alignItems: 'center' }} className="desktop-menu">
+                <ul className="desktop-menu">
                     {navLinks.map((link) => (
                         <li key={link.name}>
-                            <a
-                                href={link.href}
-                                style={{
-                                    fontSize: '0.9rem',
-                                    fontWeight: 500,
-                                    textTransform: 'uppercase',
-                                    letterSpacing: '1px',
-                                    position: 'relative',
-                                    opacity: 0.8
-                                }}
-                                className="nav-link"
-                            >
+                            <a href={link.href} className="nav-link">
                                 {link.name}
                             </a>
                         </li>
@@ -71,7 +41,7 @@ const Navbar = () => {
                 </ul>
 
                 {/* Mobile Menu Button */}
-                <div className="mobile-menu-btn" onClick={() => setIsOpen(!isOpen)} style={{ fontSize: '1.5rem', cursor: 'pointer', color: 'var(--text-light)' }}>
+                <div className="mobile-menu-btn" onClick={() => setIsOpen(!isOpen)}>
                     {isOpen ? <FaTimes /> : <FaBars />}
                 </div>
             </div>
@@ -105,30 +75,6 @@ const Navbar = () => {
                     </motion.div>
                 )}
             </AnimatePresence>
-
-            <style>{`
-                @media (min-width: 768px) {
-                    .desktop-menu { display: flex !important; }
-                    .mobile-menu-btn { display: none !important; }
-                }
-                .nav-link::after {
-                    content: '';
-                    position: absolute;
-                    bottom: -5px;
-                    left: 0;
-                    width: 0;
-                    height: 1px;
-                    background: var(--primary);
-                    transition: width 0.3s ease;
-                }
-                .nav-link:hover::after {
-                    width: 100%;
-                }
-                .nav-link:hover {
-                    opacity: 1 !important;
-                    color: var(--primary);
-                }
-            `}</style>
         </nav>
     );
 };

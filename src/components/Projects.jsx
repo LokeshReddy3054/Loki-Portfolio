@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { resumeData } from '../data/resume';
+import { portfolioData } from '../data/portfolioData';
 import { useRef } from 'react';
 
 const kanjiNumbers = ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十'];
@@ -195,7 +195,7 @@ const ProjectCard = ({ project, index }) => {
 };
 
 const Projects = () => {
-    const { projects } = resumeData;
+    const { projects } = portfolioData;
 
     return (
         <section id="projects" className="section" style={{ background: 'var(--bg-dark)', overflow: 'hidden' }}>

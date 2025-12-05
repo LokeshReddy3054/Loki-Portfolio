@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
-import { resumeData } from '../data/resume';
+import { portfolioData } from '../data/portfolioData';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaFileDownload } from 'react-icons/fa';
 
 const Contact = () => {
-    const { email, phone, location, linkedin } = resumeData.personalInfo;
+    const { email, phone, location, linkedin } = portfolioData.personalInfo;
 
     return (
         <section id="contact" className="section" style={{ background: 'transparent' }}>

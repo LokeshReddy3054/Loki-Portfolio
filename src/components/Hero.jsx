@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
-import { resumeData } from '../data/resume';
+import { portfolioData } from '../data/portfolioData';
 
 const Hero = () => {
-    const { name, role, summary } = resumeData.personalInfo;
+    const { name, role, summary } = portfolioData.personalInfo;
 
     return (
         <section id="home" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', position: 'relative', paddingTop: '80px', overflow: 'hidden' }}>

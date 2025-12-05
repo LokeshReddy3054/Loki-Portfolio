@@ -1,8 +1,8 @@
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
-import { resumeData } from '../data/resume';
+import { portfolioData } from '../data/portfolioData';
 
 const Footer = () => {
-    const { name, linkedin } = resumeData.personalInfo;
+    const { name, linkedin } = portfolioData.personalInfo;
 
     return (
         <footer style={{ background: 'var(--bg-dark)', padding: '3rem 0', borderTop: '1px solid var(--glass-border)' }}>
