@@ -1,0 +1,172 @@
+:root {
+  --primary: #BC002D;
+  /* Japan Red */
+  --primary-dark: #8a0021;
+  --secondary: #D4AF37;
+  /* Gold */
+  --accent: #FFB7C5;
+  /* Sakura Pink */
+  --bg-dark: #0a0a0a;
+  /* Ink Black */
+  --bg-card: #141414;
+  --text-light: #f0f0f0;
+  --text-gray: #a0a0a0;
+  --glass: rgba(20, 20, 20, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  /* Clean sans for body */
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+/* Japanese Pattern Background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-dark);
+  background-image:
+    radial-gradient(circle at 50% 50%, rgba(20, 20, 20, 0.8) 0%, transparent 100%),
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.03) 0px, rgba(255, 255, 255, 0.03) 1px, transparent 1px, transparent 10px);
+  z-index: -2;
+  pointer-events: none;
+}
+
+/* Red Sun Effect */
+body::after {
+  content: '';
+  position: fixed;
+  top: 10%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+  opacity: 0.15;
+  border-radius: 50%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Noto Serif JP', serif;
+  /* Elegant serif for headings */
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.4s ease;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section {
+  padding: 6rem 0;
+  position: relative;
+}
+
+.section-title {
+  font-size: 3.5rem;
+  text-align: center;
+  margin-bottom: 5rem;
+  color: var(--text-light);
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background-color: var(--primary);
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 2.5rem;
+  background: transparent;
+  color: var(--text-light);
+  border: 1px solid var(--primary);
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:hover {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 0 30px rgba(188, 0, 45, 0.4);
+}
+
+.btn-outline {
+  border: 1px solid var(--text-gray);
+  color: var(--text-gray);
+}
+
+.btn-outline:hover {
+  border-color: var(--text-light);
+  color: var(--text-light);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.contact-item-hover:hover {
+  background: rgba(188, 0, 45, 0.1) !important;
+  border-color: var(--primary) !important;
+  transform: translateY(-5px);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
